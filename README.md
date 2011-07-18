@@ -46,6 +46,10 @@ List of functions
 
 ![alt text](https://github.com/siouxcore/Animfunk/raw/master/images/sinsq.png "sinsq")
 
+  - spring :
+
+![alt text](https://github.com/siouxcore/Animfunk/raw/master/images/spring.png "spring")
+
 License
 ---
 

@@ -1,9 +1,9 @@
 /**
 * animfunk is a set of normalised animation functions - siouxcore@gmail.com
 * animfunk is under MIT license
-* version : 0.1.20110712.1
+* version : 0.1.20110718.1
 * Requirement : functions f(x) must have x from [0,1] and f(0) = 0 and f(1) = 1, f(x) is not necessarily in [0,1] (spring effect for instance)
-* change : changing methods
+* change : adding spring
 **/
 (function (){
   var animfunk = {
@@ -33,7 +33,12 @@
     },        
     cosp2: function(x){
       return 1 - Math.cos(Math.pow(x,2) * Math.PI / 2);
-    },            
+    },     
+    spring: function(x){
+        if(x < .5)
+          return Math.sin(x * Math.PI ) * 1.1;
+        return Math.sin(this.map(x,.5,1,Math.PI / 2, 6*Math.PI/2)) * this.map(x,.5,1,.1,.05) + 1;
+      },    
     map: function(value, istart, istop, ostart, ostop){
       return ostart + (ostop - ostart) * ((value - istart) / (istop - istart));
     }
